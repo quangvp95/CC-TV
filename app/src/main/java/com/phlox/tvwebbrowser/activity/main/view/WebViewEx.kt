@@ -28,8 +28,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.webkit.WebSettingsCompat
 import androidx.webkit.WebViewFeature
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.R
 import com.phlox.tvwebbrowser.model.AndroidJSInterface
 import com.phlox.tvwebbrowser.utils.LogUtils
 import java.net.URLEncoder
@@ -227,7 +227,7 @@ class WebViewEx(context: Context, val callback: Callback, val jsInterface: Andro
                     return
                 }
 
-                val activity = callback.getActivity() ?: return
+                val activity = callback.getActivity()
                 webPermissionsRequest = request
                 permRequestDialog = AlertDialog.Builder(activity)
                         .setMessage(activity.getString(R.string.web_perm_request_confirmation, TextUtils.join("\n", request.resources)))
@@ -286,7 +286,7 @@ class WebViewEx(context: Context, val callback: Callback, val jsInterface: Andro
             }
 
             override fun onGeolocationPermissionsShowPrompt(origin: String, callback: GeolocationPermissions.Callback) {
-                val activity = this@WebViewEx.callback.getActivity() ?: return
+                val activity = this@WebViewEx.callback.getActivity()
                 geoPermissionOrigin = origin
                 geoPermissionsCallback = callback
                 permRequestDialog = AlertDialog.Builder(activity)

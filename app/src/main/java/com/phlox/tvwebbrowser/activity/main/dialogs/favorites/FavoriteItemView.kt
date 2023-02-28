@@ -4,13 +4,8 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.FrameLayout
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
-
-import com.phlox.tvwebbrowser.R
+import android.widget.*
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.model.FavoriteItem
 
 /**

@@ -3,11 +3,9 @@ package com.phlox.tvwebbrowser.activity.main.dialogs
 import android.app.Dialog
 import android.content.Context
 import android.view.KeyEvent
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
-
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.singleton.shortcuts.Shortcut
 import com.phlox.tvwebbrowser.singleton.shortcuts.ShortcutMgr
 

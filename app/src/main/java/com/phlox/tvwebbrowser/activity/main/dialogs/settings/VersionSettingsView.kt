@@ -12,12 +12,12 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ScrollView
 import androidx.webkit.WebViewCompat
-import com.phlox.tvwebbrowser.BuildConfig
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.BuildConfig
+import com.example.coccocbrowsejavatest.R
+import com.example.coccocbrowsejavatest.databinding.ViewSettingsVersionBinding
 import com.phlox.tvwebbrowser.activity.IncognitoModeMainActivity
 import com.phlox.tvwebbrowser.activity.main.MainActivity
 import com.phlox.tvwebbrowser.activity.main.SettingsModel
-import com.phlox.tvwebbrowser.databinding.ViewSettingsVersionBinding
 import com.phlox.tvwebbrowser.utils.activemodel.ActiveModelsRepository
 import com.phlox.tvwebbrowser.utils.activity
 

@@ -3,7 +3,7 @@ package com.phlox.tvwebbrowser.activity
 import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.activity.main.MainActivity
 
 //Same as MainActivity but runs in separate process

@@ -1,7 +1,6 @@
 package com.phlox.tvwebbrowser.activity.main.view.tabs
 
 import android.graphics.drawable.BitmapDrawable
-import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
@@ -9,10 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
+import com.example.coccocbrowsejavatest.databinding.ViewHorizontalWebtabItemBinding
 import com.phlox.tvwebbrowser.activity.main.TabsModel
 import com.phlox.tvwebbrowser.activity.main.view.tabs.TabsAdapter.TabViewHolder
-import com.phlox.tvwebbrowser.databinding.ViewHorizontalWebtabItemBinding
 import com.phlox.tvwebbrowser.model.WebTabState
 import com.phlox.tvwebbrowser.widgets.CheckableContainer
 

@@ -14,8 +14,8 @@ import android.widget.ImageButton
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.phlox.tvwebbrowser.R
-import com.phlox.tvwebbrowser.databinding.ActivityHistoryBinding
+import com.example.coccocbrowsejavatest.R
+import com.example.coccocbrowsejavatest.databinding.ActivityHistoryBinding
 import com.phlox.tvwebbrowser.singleton.AppDatabase
 import com.phlox.tvwebbrowser.utils.BaseAnimationListener
 import com.phlox.tvwebbrowser.utils.Utils

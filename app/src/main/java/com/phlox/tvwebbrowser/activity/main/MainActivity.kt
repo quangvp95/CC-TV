@@ -5,7 +5,6 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.*
 import android.content.pm.PackageManager
-import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.net.ConnectivityManager
@@ -26,7 +25,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
+import com.example.coccocbrowsejavatest.databinding.ActivityMainBinding
 import com.phlox.tvwebbrowser.TVBro
 import com.phlox.tvwebbrowser.activity.IncognitoModeMainActivity
 import com.phlox.tvwebbrowser.activity.downloads.DownloadsActivity
@@ -39,7 +39,6 @@ import com.phlox.tvwebbrowser.activity.main.view.CursorLayout
 import com.phlox.tvwebbrowser.activity.main.view.Scripts
 import com.phlox.tvwebbrowser.activity.main.view.WebViewEx
 import com.phlox.tvwebbrowser.activity.main.view.tabs.TabsAdapter.Listener
-import com.phlox.tvwebbrowser.databinding.ActivityMainBinding
 import com.phlox.tvwebbrowser.model.*
 import com.phlox.tvwebbrowser.singleton.shortcuts.ShortcutMgr
 import com.phlox.tvwebbrowser.utils.*
@@ -550,7 +549,7 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
         Log.i(TAG, "onDownloadRequested url: $url")
         val fileName = Uri.parse(url).lastPathSegment
         val mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(url))
-        onDownloadRequested(url, tab.url ?: "", fileName
+        onDownloadRequested(url, tab.url, fileName
                 ?: "url.html", tab.webView?.settings?.userAgentString
                 ?: getString(R.string.app_name), mimeType)
     }
@@ -660,10 +659,6 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
 
         super.onPause()
         running = false
-    }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
     }
 
     private fun toggleAdBlockForTab() {
@@ -1189,9 +1184,8 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
 
         override fun onDownloadStart(url: String, userAgent: String, contentDisposition: String, mimetype: String?, contentLength: Long) {
             Log.i(TAG, "DownloadListener.onDownloadStart url: $url")
-            onDownloadRequested(url, tab.url
-                    ?: "", DownloadUtils.guessFileName(url, contentDisposition, mimetype), userAgent
-                    ?: tab.webView?.settings?.userAgentString
+            onDownloadRequested(url,
+                tab.url, DownloadUtils.guessFileName(url, contentDisposition, mimetype), userAgent
                     ?: getString(R.string.app_name), mimetype)
         }
 

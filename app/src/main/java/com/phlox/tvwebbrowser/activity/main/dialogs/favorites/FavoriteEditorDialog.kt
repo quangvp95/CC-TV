@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.model.FavoriteItem
 
 /**

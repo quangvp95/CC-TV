@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -46,7 +45,7 @@
     </queries>
 
     <application
-        android:name=".TVBro"
+        android:name="com.phlox.tvwebbrowser.TVBro"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
@@ -59,7 +58,7 @@
         android:requestLegacyExternalStorage="true"
         android:extractNativeLibs="${extractNativeLibs}">
         <activity
-            android:name=".activity.main.MainActivity"
+            android:name="com.phlox.tvwebbrowser.activity.main.MainActivity"
             android:banner="@drawable/banner"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name_short"
@@ -88,15 +87,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.history.HistoryActivity"
+            android:name="com.phlox.tvwebbrowser.activity.history.HistoryActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:windowSoftInputMode="adjustResize" />
 
-        <activity android:name=".activity.downloads.DownloadsActivity"
+        <activity android:name="com.phlox.tvwebbrowser.activity.downloads.DownloadsActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:windowSoftInputMode="adjustResize" />
 
-        <activity android:name=".activity.IncognitoModeMainActivity"
+        <activity android:name="com.phlox.tvwebbrowser.activity.IncognitoModeMainActivity"
             android:process=":incognito"
             android:exported="false"
             android:icon="@drawable/ic_launcher"
@@ -109,7 +108,7 @@
             android:value="true" />
 
         <service
-            android:name=".service.downloads.DownloadService">
+            android:name="com.phlox.tvwebbrowser.service.downloads.DownloadService">
         </service>
 
         <provider

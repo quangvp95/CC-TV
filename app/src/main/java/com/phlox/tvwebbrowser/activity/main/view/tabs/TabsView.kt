@@ -1,6 +1,5 @@
 package com.phlox.tvwebbrowser.activity.main.view.tabs
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.graphics.Rect
@@ -9,12 +8,11 @@ import android.view.LayoutInflater
 import android.widget.RelativeLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
+import com.example.coccocbrowsejavatest.databinding.ViewTabsBinding
 import com.phlox.tvwebbrowser.activity.main.SettingsModel
 import com.phlox.tvwebbrowser.activity.main.TabsModel
-import com.phlox.tvwebbrowser.activity.main.view.WebViewEx
 import com.phlox.tvwebbrowser.activity.main.view.tabs.TabsAdapter.Listener
-import com.phlox.tvwebbrowser.databinding.ViewTabsBinding
 import com.phlox.tvwebbrowser.model.WebTabState
 import com.phlox.tvwebbrowser.utils.activemodel.ActiveModelsRepository
 import com.phlox.tvwebbrowser.utils.observable.ObservableList
@@ -70,14 +68,14 @@ class TabsView @JvmOverloads constructor(
         when (i) {
           //Open new Tab
           0 -> {
-            listener?.openInNewTab(settingsModel.homePage.value!!, tabIndex + 1)
+            listener?.openInNewTab(settingsModel.homePage.value, tabIndex + 1)
           }
           //Close current
           1 -> listener?.closeTab(tab)
           //Close all
           2 -> {
             tabsModel.onCloseAllTabs()
-            listener?.openInNewTab(settingsModel.homePage.value!!, 0)
+            listener?.openInNewTab(settingsModel.homePage.value, 0)
           }
           //Move left
           3 -> if (tabIndex > 0) {

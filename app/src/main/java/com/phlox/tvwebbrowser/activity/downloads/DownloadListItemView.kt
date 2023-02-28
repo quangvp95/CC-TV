@@ -7,10 +7,10 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.model.Download
 import java.text.SimpleDateFormat
-import java.util.Date
+import java.util.*
 
 /**
  * Created by PDT on 24.01.2017.

@@ -6,9 +6,9 @@ import android.os.Build
 import android.provider.Settings
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.phlox.tvwebbrowser.BuildConfig
+import com.example.coccocbrowsejavatest.BuildConfig
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.R
 import com.phlox.tvwebbrowser.TVBro
 import com.phlox.tvwebbrowser.utils.UpdateChecker
 import com.phlox.tvwebbrowser.utils.activemodel.ActiveModel

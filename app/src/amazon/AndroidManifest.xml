@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".TVBro"
+        android:name="com.phlox.tvwebbrowser.TVBro"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/fireos_launcher_icon"
@@ -18,7 +18,7 @@
 
 
         <activity
-            android:name=".activity.main.MainActivity" />
+            android:name="com.phlox.tvwebbrowser.activity.main.MainActivity" />
     </application>
 
 </manifest>

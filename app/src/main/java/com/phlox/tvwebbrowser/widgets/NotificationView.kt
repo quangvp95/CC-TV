@@ -8,7 +8,7 @@ import android.view.ViewPropertyAnimator
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import androidx.annotation.DrawableRes
-import com.phlox.tvwebbrowser.databinding.ViewNotificationBinding
+import com.example.coccocbrowsejavatest.databinding.ViewNotificationBinding
 
 open class NotificationView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null

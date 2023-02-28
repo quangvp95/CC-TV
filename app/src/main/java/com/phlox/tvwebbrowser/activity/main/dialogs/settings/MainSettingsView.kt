@@ -7,14 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.webkit.WebView
-import android.widget.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.ScrollView
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.webkit.WebViewFeature
+import com.example.coccocbrowsejavatest.R
+import com.example.coccocbrowsejavatest.databinding.ViewSettingsMainBinding
 import com.phlox.tvwebbrowser.Config
-import com.phlox.tvwebbrowser.R
 import com.phlox.tvwebbrowser.activity.main.AdblockModel
 import com.phlox.tvwebbrowser.activity.main.SettingsModel
-import com.phlox.tvwebbrowser.databinding.ViewSettingsMainBinding
 import com.phlox.tvwebbrowser.utils.activemodel.ActiveModelsRepository
 import com.phlox.tvwebbrowser.utils.activity
 import java.text.SimpleDateFormat
@@ -121,7 +124,7 @@ class MainSettingsView @JvmOverloads constructor(
                 settingsModel.uaString.value.startsWith(SettingsModel.TV_BRO_UA_PREFIX)) {
             0
         } else {
-            settingsModel.uaStrings.indexOf(settingsModel.uaString.value ?: "")
+            settingsModel.uaStrings.indexOf(settingsModel.uaString.value)
         }
 
         val adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, settingsModel.userAgentStringTitles)

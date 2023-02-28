@@ -4,13 +4,12 @@ import android.app.Dialog
 import android.content.Context
 import android.view.View
 import android.widget.*
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.model.FavoriteItem
 import com.phlox.tvwebbrowser.singleton.AppDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.*
 
 /**
  * Created by PDT on 09.09.2016.

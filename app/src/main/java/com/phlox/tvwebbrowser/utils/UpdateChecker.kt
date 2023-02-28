@@ -3,7 +3,6 @@ package com.phlox.tvwebbrowser.utils
 import android.app.ProgressDialog
 import android.content.ActivityNotFoundException
 import android.content.Context
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Build
 import android.text.Html
@@ -12,7 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.FileProvider
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
 import kotlinx.coroutines.*
 import org.json.JSONObject
 import java.io.File
@@ -140,7 +139,7 @@ class UpdateChecker(val currentVersionCode: Int) {
                 }
 
                 input = connection.inputStream
-                output = downloadedFile!!.outputStream()
+                output = downloadedFile.outputStream()
                 val data = ByteArray(8 * 1024)
                 var total: Long = 0
                 var count: Int

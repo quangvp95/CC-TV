@@ -10,10 +10,10 @@ import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
 import android.widget.RelativeLayout
-import com.phlox.tvwebbrowser.R
+import com.example.coccocbrowsejavatest.R
+import com.example.coccocbrowsejavatest.databinding.ViewShortcutBinding
 import com.phlox.tvwebbrowser.activity.main.SettingsModel
 import com.phlox.tvwebbrowser.activity.main.dialogs.ShortcutDialog
-import com.phlox.tvwebbrowser.databinding.ViewShortcutBinding
 import com.phlox.tvwebbrowser.singleton.shortcuts.ShortcutMgr
 import com.phlox.tvwebbrowser.utils.activemodel.ActiveModelsRepository
 import com.phlox.tvwebbrowser.utils.activity

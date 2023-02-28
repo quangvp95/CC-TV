@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.os.Process
 import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.coccocbrowsejavatest.R
 import com.phlox.tvwebbrowser.activity.IncognitoModeMainActivity
 import com.phlox.tvwebbrowser.utils.activemodel.ActiveModelsRepository
 import java.net.CookieHandler

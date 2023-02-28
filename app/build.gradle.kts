@@ -18,10 +18,10 @@ if (localPropertiesFile.exists()) {
 android {
     compileSdk = 33
     buildToolsVersion = "33.0.1"
-    namespace = "com.phlox.tvwebbrowser"
+    namespace = "com.example.coccocbrowsejavatest"
 
     defaultConfig {
-        applicationId = "com.phlox.tvwebbrowser"
+        applicationId = "com.example.coccocbrowsejavatest"
         minSdk = 23
         targetSdk = 33
         versionCode = 59

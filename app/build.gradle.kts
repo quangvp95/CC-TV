@@ -124,6 +124,8 @@ dependencies {
     if (project.property("crashlytics") == true) {
         implementation("com.google.firebase:firebase-crashlytics-ktx:18.3.2")
     }
+    implementation("androidx.leanback:leanback:1.0.0")
+    implementation("com.github.bumptech.glide:glide:4.11.0")
 }
 
 tasks.getByName("check").dependsOn("lint")

@@ -20,6 +20,8 @@ class Config(val prefs: SharedPreferences) {
         const val KEEP_SCREEN_ON_KEY = "keep_screen_on"
         const val INCOGNITO_MODE_KEY = "incognito_mode"
         const val INCOGNITO_MODE_HINT_SUPPRESS_KEY = "incognito_mode_hint_suppress"
+
+        const val PREF_CCTV_TOKEN_ID = "pref_cctv_token_id"
     }
 
     enum class Theme {
@@ -99,5 +101,13 @@ class Config(val prefs: SharedPreferences) {
 
     fun setUpdateChannel(channel: String) {
         prefs.edit().putString(UPDATE_CHANNEL_KEY, channel).apply()
+    }
+
+    fun setFirebaseToken(token: String) {
+        prefs.edit().putString(PREF_CCTV_TOKEN_ID, token).apply()
+    }
+    
+    fun getFirebaseToken(): String {
+        return prefs.getString(PREF_CCTV_TOKEN_ID, "")!!
     }
 }

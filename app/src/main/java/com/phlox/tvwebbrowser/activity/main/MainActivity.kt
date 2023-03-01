@@ -39,6 +39,7 @@ import com.phlox.tvwebbrowser.activity.main.view.CursorLayout
 import com.phlox.tvwebbrowser.activity.main.view.Scripts
 import com.phlox.tvwebbrowser.activity.main.view.WebViewEx
 import com.phlox.tvwebbrowser.activity.main.view.tabs.TabsAdapter.Listener
+import com.phlox.tvwebbrowser.coccoc.CCTvManager
 import com.phlox.tvwebbrowser.model.*
 import com.phlox.tvwebbrowser.singleton.shortcuts.ShortcutMgr
 import com.phlox.tvwebbrowser.utils.*
@@ -79,6 +80,7 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
     protected val config = TVBro.config
     private val voiceSearchHelper = VoiceSearchHelper(this, VOICE_SEARCH_REQUEST_CODE,
         MY_PERMISSIONS_REQUEST_VOICE_SEARCH_PERMISSIONS)
+    private val ccTvManager = CCTvManager.instance
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -1185,8 +1187,8 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
         override fun onDownloadStart(url: String, userAgent: String, contentDisposition: String, mimetype: String?, contentLength: Long) {
             Log.i(TAG, "DownloadListener.onDownloadStart url: $url")
             onDownloadRequested(url,
-                tab.url, DownloadUtils.guessFileName(url, contentDisposition, mimetype), userAgent
-                    ?: getString(R.string.app_name), mimetype)
+                tab.url, DownloadUtils.guessFileName(url, contentDisposition, mimetype),
+                userAgent, mimetype)
         }
 
         override fun onScaleChanged(oldScale: Float, newScale: Float) {

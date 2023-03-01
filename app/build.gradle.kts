@@ -95,6 +95,11 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    implementation("com.google.firebase:firebase-core:21.1.1")
+    implementation ("com.google.firebase:firebase-messaging:23.0.0")
+    implementation (project.dependencies.platform("com.google.firebase:firebase-bom:31.2.2"))
+    implementation ("com.google.firebase:firebase-database-ktx")
+
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("androidx.webkit:webkit:1.5.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
@@ -117,7 +122,6 @@ dependencies {
     "debugImplementation"("com.squareup.leakcanary:leakcanary-android:2.7")
 
     if (project.property("crashlytics") == true) {
-        implementation("com.google.firebase:firebase-core:21.1.1")
         implementation("com.google.firebase:firebase-crashlytics-ktx:18.3.2")
     }
 }

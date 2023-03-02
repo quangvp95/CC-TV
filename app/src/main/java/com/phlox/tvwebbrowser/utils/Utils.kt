@@ -42,7 +42,7 @@ object Utils {
         try {
             val myIntent: Intent?
             myIntent = Intent(context, classToIntent)
-            myIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            myIntent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
             bundle?.let { myIntent.putExtras(it) }
             context.startActivity(myIntent)
         } catch (e: Exception) {

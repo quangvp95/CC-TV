@@ -62,7 +62,6 @@
             android:banner="@drawable/ic_launcher_banner"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name_short"
-            android:launchMode="singleTask"
             android:configChanges="uiMode"
             android:logo="@drawable/ic_launcher_banner"
             android:theme="@style/Theme.Example.LeanbackBrowse"
@@ -82,7 +81,9 @@
                 <data android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name="com.phlox.tvwebbrowser.activity.main.MainActivity"/>
+        <activity
+            android:name="com.phlox.tvwebbrowser.activity.main.MainActivity"
+            android:exported="true" />
         <activity
             android:name="com.phlox.tvwebbrowser.activity.history.HistoryActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"

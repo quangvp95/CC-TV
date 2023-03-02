@@ -47,4 +47,6 @@
     <dimen name="add_remove_margin">20dp</dimen>
     <dimen name="card_width">192dp</dimen>
     <dimen name="card_height">96dp</dimen>
+
+    <dimen name="settings_icon_size">48dp</dimen>
 </resources>

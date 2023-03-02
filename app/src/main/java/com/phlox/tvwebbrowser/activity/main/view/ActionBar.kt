@@ -31,7 +31,7 @@ class ActionBar @JvmOverloads constructor(
     private var extendedAddressBarMode = false
 
     interface Callback {
-        fun closeWindow()
+        fun goToHomeLauncher()
         fun showDownloads()
         fun showFavorites()
         fun showHistory()
@@ -41,6 +41,9 @@ class ActionBar @JvmOverloads constructor(
         fun onExtendedAddressBarMode()
         fun onUrlInputDone()
         fun toggleIncognitoMode()
+        fun onBackBtnClick()
+        fun onForwardBtnClick();
+        fun onCloseTab();
     }
 
     private val etUrlFocusChangeListener = OnFocusChangeListener { _, focused ->
@@ -84,15 +87,18 @@ class ActionBar @JvmOverloads constructor(
 
         val incognitoMode = TVBro.config.incognitoMode
 
-        vb.ibMenu.setOnClickListener { callback?.closeWindow() }
+        vb.ibHome.setOnClickListener { callback?.goToHomeLauncher() }
         vb.ibDownloads.setOnClickListener { callback?.showDownloads() }
         vb.ibFavorites.setOnClickListener { callback?.showFavorites() }
         vb.ibHistory.setOnClickListener { callback?.showHistory() }
         vb.ibIncognito.setOnClickListener { callback?.toggleIncognitoMode() }
         vb.ibSettings.setOnClickListener { callback?.showSettings() }
+        vb.ibBack.setOnClickListener { callback?.onBackBtnClick() }
+        vb.ibForward.setOnClickListener { callback?.onForwardBtnClick() }
+        vb.ibCloseTab.setOnClickListener { callback?.onCloseTab() }
 
         if (Utils.isFireTV(context)) {
-            vb.ibMenu.nextFocusRightId = R.id.ibHistory
+            vb.ibHome.nextFocusRightId = R.id.ibHistory
             removeView(vb.ibVoiceSearch)
         } else {
             vb.ibVoiceSearch.setOnClickListener { callback?.initiateVoiceSearch() }
@@ -118,6 +124,21 @@ class ActionBar @JvmOverloads constructor(
                     downloadAnimation = null
                 }
             }
+        }
+    }
+
+    fun updateBackForwardBtnEnable(backBtnEnable: Boolean, fwBtnEnable: Boolean) {
+        vb.ibBack.isEnabled = backBtnEnable
+        vb.ibForward.isEnabled = fwBtnEnable
+        if (!vb.ibBack.isEnabled) {
+            vb.ibCloseTab.nextFocusRightId = vb.ibVoiceSearch.id
+        } else {
+            vb.ibCloseTab.nextFocusRightId = vb.ibBack.id
+        }
+        if (!vb.ibForward.isEnabled) {
+            vb.ibBack.nextFocusRightId = vb.ibVoiceSearch.id
+        } else {
+            vb.ibBack.nextFocusRightId = vb.ibForward.id
         }
     }
 
@@ -154,6 +175,6 @@ class ActionBar @JvmOverloads constructor(
     }
 
     fun catchFocus() {
-        vb.ibMenu.requestFocus()
+        vb.ibHome.requestFocus()
     }
 }

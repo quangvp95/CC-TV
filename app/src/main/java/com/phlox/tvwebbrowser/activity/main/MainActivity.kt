@@ -86,7 +86,6 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
         super.onCreate(savedInstanceState)
 
         val incognitoMode = config.incognitoMode
-        Log.e("QuangNHe", "onCreate incognitoMode: $incognitoMode")
         Log.d(TAG, "onCreate incognitoMode: $incognitoMode")
         if (incognitoMode xor (this is IncognitoModeMainActivity)) {
             switchProcess(incognitoMode, intent?.extras)
@@ -648,7 +647,6 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
         registerReceiver(mConnectivityChangeReceiver, intentFilter)
         if (tabsModel.currentTab.value != null) {
             tabsModel.currentTab.value!!.webView?.onResume()
-            tabsModel.currentTab.value!!.webView?.loadUrl("www.google.com")
         }
     }
 
@@ -693,7 +691,6 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
     }
 
     fun navigate(url: String) {
-        Log.e("QuangNHe", "MainActivity navigate $url")
         vb.vActionBar.setAddressBoxTextColor(ContextCompat.getColor(this@MainActivity, R.color.default_url_color))
         val tab = tabsModel.currentTab.value
         if (tab != null) {

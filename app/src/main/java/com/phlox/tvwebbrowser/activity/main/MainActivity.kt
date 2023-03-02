@@ -404,9 +404,17 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
         vb.progressBarGeneric.visibility = View.GONE
 
         val intentUri = intent.data
+        var urlFromLauncherScreen = ""
+        intent.extras?.let {
+            urlFromLauncherScreen = it.getString(Utils.OPEN_LINK_EXTRAS, "")
+        }
         if (intentUri == null) {
             if (tabsModel.tabsStates.isEmpty()) {
-                openInNewTab(settingsModel.homePage.value)
+                if (urlFromLauncherScreen.isNotEmpty()) {
+                    openInNewTab(urlFromLauncherScreen)
+                } else {
+                    openInNewTab(settingsModel.homePage.value)
+                }
             } else {
                 var foundSelectedTab = false
                 for (i in tabsModel.tabsStates.indices) {
@@ -419,6 +427,9 @@ open class MainActivity : AppCompatActivity(), ActionBar.Callback {
                 }
                 if (!foundSelectedTab) {//this may happen in some error states
                     changeTab(tabsModel.tabsStates[0])
+                }
+                if (urlFromLauncherScreen.isNotEmpty()) {
+                    navigate(urlFromLauncherScreen)
                 }
             }
         } else {

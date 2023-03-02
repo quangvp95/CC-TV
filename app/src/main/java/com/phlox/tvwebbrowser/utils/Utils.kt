@@ -1,7 +1,9 @@
 package com.phlox.tvwebbrowser.utils
 
+import android.app.Activity
 import android.app.UiModeManager
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Point
 import android.net.ConnectivityManager
@@ -9,6 +11,7 @@ import android.os.Bundle
 import android.os.Parcel
 import android.view.WindowManager
 import android.widget.Toast
+import com.phlox.tvwebbrowser.activity.main.MainActivity
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -22,7 +25,30 @@ import java.util.zip.ZipInputStream
 
 
 object Utils {
+    const val OPEN_LINK_EXTRAS = "OPEN_LINK_EXTRAS"
+    /**
+     * Start open link from launcher screen
+     */
+    fun openLink(context: Activity, url: String) {
+        val bundle = Bundle()
+        bundle.putString(OPEN_LINK_EXTRAS, url)
+        intentToActivity(context, MainActivity::class.java, bundle)
+    }
 
+    /**
+     * intent to activity
+     */
+    fun intentToActivity(context: Activity, classToIntent: Class<*>, bundle: Bundle?) {
+        try {
+            val myIntent: Intent?
+            myIntent = Intent(context, classToIntent)
+            myIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            bundle?.let { myIntent.putExtras(it) }
+            context.startActivity(myIntent)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
     /**
      * Returns the screen/display size
      */

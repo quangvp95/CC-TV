@@ -50,6 +50,7 @@ import com.phlox.tvwebbrowser.model.cc.Card;
 import com.phlox.tvwebbrowser.model.cc.CardRow;
 import com.phlox.tvwebbrowser.utils.CCUtils;
 import com.phlox.tvwebbrowser.utils.CardListRow;
+import com.phlox.tvwebbrowser.utils.Utils;
 
 /**
  * This fragment will be shown when the "Card Examples" card is selected at the home menu. It will
@@ -88,9 +89,7 @@ public class LauncherTvFragment extends BrowseFragment {
 
             @Override
             public void onClick(View view) {
-                Toast.makeText(
-                                getActivity(), "getString(R.string.implement_search)", Toast.LENGTH_SHORT)
-                        .show();
+                Utils.INSTANCE.openLink(getActivity(), "https://github.com/");
             }
         });
 

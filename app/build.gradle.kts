@@ -95,10 +95,12 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
+    //coccoc
     implementation("com.google.firebase:firebase-core:21.1.1")
     implementation ("com.google.firebase:firebase-messaging:23.0.0")
     implementation (project.dependencies.platform("com.google.firebase:firebase-bom:31.2.2"))
     implementation ("com.google.firebase:firebase-database-ktx")
+    implementation ("com.google.code.gson:gson:2.8.2")
 
     implementation("androidx.appcompat:appcompat:1.5.1")
     implementation("androidx.webkit:webkit:1.5.0")

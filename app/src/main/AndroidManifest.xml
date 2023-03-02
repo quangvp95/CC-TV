@@ -59,12 +59,12 @@
         android:extractNativeLibs="${extractNativeLibs}">
         <activity
             android:name="com.phlox.tvwebbrowser.activity.launcher.LauncherTvActivity"
-            android:banner="@drawable/banner"
+            android:banner="@drawable/ic_launcher_banner"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name_short"
             android:launchMode="singleTask"
             android:configChanges="uiMode"
-            android:logo="@drawable/banner"
+            android:logo="@drawable/ic_launcher_banner"
             android:theme="@style/Theme.Example.LeanbackBrowse"
             android:exported="true">
             <intent-filter>

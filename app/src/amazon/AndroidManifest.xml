@@ -6,7 +6,7 @@
         android:name="com.phlox.tvwebbrowser.TVBro"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/fireos_launcher_icon"
+        android:icon="@mipmap/launcher_banner_fireos"
         tools:replace="android:icon"
         android:label="@string/app_name"
         android:largeHeap="true"

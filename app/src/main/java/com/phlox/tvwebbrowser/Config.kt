@@ -15,7 +15,7 @@ class Config(val prefs: SharedPreferences) {
         const val LAST_UPDATE_USER_NOTIFICATION_TIME_KEY = "last_update_notif"
         const val AUTO_CHECK_UPDATES_KEY = "auto_check_updates"
         const val UPDATE_CHANNEL_KEY = "update_channel"
-        const val TV_BRO_UA_PREFIX = "TV Bro/1.0 "
+        const val TV_BRO_UA_PREFIX = "CC-TV/1.0 "
         const val DEFAULT_HOME_URL = "about:blank"
         const val KEEP_SCREEN_ON_KEY = "keep_screen_on"
         const val INCOGNITO_MODE_KEY = "incognito_mode"

@@ -493,6 +493,7 @@ class WebViewEx(context: Context, val callback: Callback, val jsInterface: Andro
     }
 
     override fun loadUrl(url: String) {
+        Log.e("QuangNHe", "WebViewEx loadUrl $url", Throwable())
         when {
             Config.DEFAULT_HOME_URL == url -> {
                 val data = context.assets.open("pages/new-tab.html").bufferedReader().use { it.readText() }
@@ -516,6 +517,17 @@ class WebViewEx(context: Context, val callback: Callback, val jsInterface: Andro
                 super.loadUrl(url)
             }
         }
+    }
+
+    override fun loadDataWithBaseURL(
+        baseUrl: String?,
+        data: String,
+        mimeType: String?,
+        encoding: String?,
+        historyUrl: String?
+    ) {
+        Log.e("QuangNHe", "WebViewEx loadDataWithBaseURL $baseUrl", Throwable())
+        super.loadDataWithBaseURL(baseUrl, data, mimeType, encoding, historyUrl)
     }
 
     private fun getGenericJSInjects(): String {
